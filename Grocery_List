@@ -1,0 +1,34 @@
+#Creating a bookstore library database 
+
+CREATE TABLE library(id INTEGER PRIMARY KEY, name TEXT, genre TEXT, aisel_number TEXT, price INTEGER); 
+
+INSERT INTO library VALUES (1, "Harry Potter and the Sorcerer's Stone", "Adventure/Fantasy", 5, 6.89);
+INSERT INTO library VALUES (2, "Black Moon", "Science Fiction/Fantasy", 7, 16.00);
+INSERT INTO library VALUES (3, "The Snow Child", "Science Fiction/Fantasy", 7, 9.99); 
+INSERT INTO library VALUES (4, "The Graveyard Book", "Science Fiction/Fantasy", 8, 8.99);
+INSERT INTO library VALUES (5, "The Bone Clocks", "Science Fiction/Fantasy", 8, 18.95);
+INSERT INTO library VALUES (6, "Black Water", "Historical Fiction", 11, 17.00);
+INSERT INTO library VALUES (7, "Smoke and Mirrors", "Short Stories", 15, 8.87);
+INSERT INTO library VALUES (8, "California", "Dystopia", 21, 11.41); 
+INSERT INTO library VALUES (9, "Darkness Visible", "Memoir/Psychology", 25, 13.47);
+INSERT INTO library VALUES (10, "The Glass Castle", "Memoir", 23, 17.00);
+INSERT INTO library VALUES (11, "The Liars' Club", "Memoir", 23, 18.00);
+INSERT INTO library VALUES (12, "The Road", "Mystery/Horror", 26, 17.00);
+INSERT INTO library VALUES (13, "The Bride Collector", "Mystery/Horror", 27, 24.22);
+INSERT INTO library VALUES (14, "Tell the Wolves I'm Home", "Realistic Fiction", 6, 18.00);
+INSERT INTO library VALUES (15, "Into the Wild", "Biography", 1, 16.00);
+
+#display the database library by price.
+SELECT * FROM library
+ORDER BY price desc;
+
+#what is the average price of items in the science fiction/fantasy section
+SELECT AVG(price) 
+FROM library
+WHERE genre='Science Fiction/Fantasy';
+
+#What is the 5 most expensive items? 
+SELECT name, price
+FROM library
+ORDER BY price desc
+limit 5;
